@@ -6,12 +6,6 @@ var myAtoi = function(s) {
     const arr = []
     // To check if we get a number at all
     const trimmed = s.trim() // This will remove the space in starting and end
-    let hasANumber = false
-    // Checking if we have a number in first place. If so, hasANumber is set to True.
-    if((trimmed[0] === '-' || trimmed[0] === '+') && !isNaN(trimmed[1])) {
-        hasANumber = true
-    }
-
     for(let i=0; i<trimmed.length;i++) {
         /**
         This logic is bit complicated.
