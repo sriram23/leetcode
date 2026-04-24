@@ -7,7 +7,7 @@ var once = function(fn) {
     return function(...args){
         if(called) return
         called = true
-        return fn.apply(this, args)
+        return fn(...args)
     }
 };
 
