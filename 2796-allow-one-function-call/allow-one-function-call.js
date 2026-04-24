@@ -5,9 +5,11 @@
 var once = function(fn) {
     let called = false
     return function(...args){
-        if(called) return
-        called = true
-        return fn(...args)
+        if(!called) {
+            called = true
+            return fn(...args)
+        }
+        return
     }
 };
 
