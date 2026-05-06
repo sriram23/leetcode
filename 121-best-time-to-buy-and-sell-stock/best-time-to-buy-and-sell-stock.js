@@ -7,7 +7,7 @@ var maxProfit = function(prices) {
     let profit = 0
     for(let i=0;i<prices.length;i++) {
         if(prices[i] < buy) buy = prices[i]
-        profit = Math.max(prices[i]-buy, profit)
+        profit = Math.max(prices[i] - buy, profit)
     }
     return profit
 };
