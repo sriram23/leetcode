@@ -8,6 +8,6 @@ var twoSum = function(nums, target) {
     for(let i=0;i<nums.length;i++) {
         const rem = target - nums[i]
         if(map.has(rem)) return [map.get(rem), i]
-        else map.set(nums[i], i)
+        map.set(nums[i], i)
     }
 };
