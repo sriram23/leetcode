@@ -4,10 +4,10 @@
  * @return {number}
  */
 var removeElement = function(nums, val) {
-    const finalArr = nums.filter(n => n !== val)
-    for(let i=0;i<finalArr.length;i++) {
-        nums[i] = finalArr[i]
+    const newArr = nums.filter(n => n !== val)
+    for(let i=0;i<newArr.length;i++) {
+        nums[i] = newArr[i]
     }
-    nums.splice(finalArr.length, nums.length - finalArr.length)
+    nums.splice(newArr.length, nums.length - newArr.length)
     return nums.length
 };
