@@ -3,11 +3,10 @@
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-    const withoutDuplicates = Array.from(new Set(nums)).sort((x, y) => x-y)
-    console.log(withoutDuplicates)
-    for(let i=0;i<withoutDuplicates.length;i++) {
-        nums[i] = withoutDuplicates[i]
+    const newArr = Array.from(new Set(nums))
+    for(let i=0;i<newArr.length;i++) {
+        nums[i] = newArr[i]
     }
-    nums.splice(withoutDuplicates.length, nums.length - withoutDuplicates.length)
+    nums.splice(newArr.length, (nums.length - newArr.length))
     return nums.length
 };
