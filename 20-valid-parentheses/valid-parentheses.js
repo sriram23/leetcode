@@ -3,16 +3,21 @@
  * @return {boolean}
  */
 var isValid = function(s) {
-    const stack = []
-    const pairs = {
-        '{': '}',
-        '[': ']',
-        '(': ')'
+    const PAIRS = {
+        "{":"}",
+        "[":"]",
+        "(":")"
     }
-    for(let l of s) {
-        if(pairs[l]) stack.push(pairs[l])
-        else if(stack[stack.length-1] === l) stack.pop()
-        else stack.push(-1)
+    const stck = []
+    for(let i=0;i<s.length;i++) {
+        console.log(s[i], s.length)
+        if(PAIRS.hasOwnProperty(s[i])) {
+            stck.push(PAIRS[s[i]])
+        } else{
+            if(stck[stck.length-1] === s[i]){
+                stck.pop()
+            } else return false
+        }
     }
-    return stack.length === 0
+    return stck.length === 0
 };
