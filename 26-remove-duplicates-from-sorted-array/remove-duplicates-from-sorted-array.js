@@ -3,10 +3,10 @@
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-    const newArr = Array.from(new Set(nums))
-    for(let i=0;i<newArr.length;i++) {
-        nums[i] = newArr[i]
+    const temp = Array.from(new Set(nums.slice()))
+    for(let i=0;i<temp.length;i++) {
+        nums[i] = temp[i]
     }
-    nums.splice(newArr.length, (nums.length - newArr.length))
-    return nums.length
+    temp.splice(temp.length, (nums.length - temp.length))
+    return temp.length
 };
