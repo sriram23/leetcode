@@ -3,18 +3,13 @@
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-    // two pointer approach
-    let readPointer = 0
-    let writePointer = 0
-    while(readPointer < nums.length) {
-        if(readPointer === writePointer) {
-            writePointer++
-        } else if(nums[readPointer] === nums[writePointer]) {
-            nums.splice(writePointer, 1)
-            writePointer--
-        } else {
-            readPointer = writePointer
+    // two pointer approach optimal approach
+    let write = 1
+    for(let read=1; read<nums.length; read++) {
+        if(nums[read] !== nums[write-1]) {
+            nums[write] = nums[read]
+            write++
         }
     }
-    return nums.length
+    return write
 };
