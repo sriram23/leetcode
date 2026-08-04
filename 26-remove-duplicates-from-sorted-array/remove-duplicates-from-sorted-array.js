@@ -3,10 +3,18 @@
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-    const temp = Array.from(new Set(nums.slice()))
-    for(let i=0;i<temp.length;i++) {
-        nums[i] = temp[i]
+    // two pointer approach
+    let readPointer = 0
+    let writePointer = 0
+    while(readPointer < nums.length) {
+        if(readPointer === writePointer) {
+            writePointer++
+        } else if(nums[readPointer] === nums[writePointer]) {
+            nums.splice(writePointer, 1)
+            writePointer--
+        } else {
+            readPointer = writePointer
+        }
     }
-    temp.splice(temp.length, (nums.length - temp.length))
-    return temp.length
+    return nums.length
 };
