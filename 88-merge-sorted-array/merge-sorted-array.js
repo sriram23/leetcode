@@ -6,6 +6,8 @@
  * @return {void} Do not return anything, modify nums1 in-place instead.
  */
 var merge = function(nums1, m, nums2, n) {
-    nums1.splice(m, n, ...nums2)
-    nums1.sort((x,y) => x-y)
+    for(let i=0;i<n;i++) {
+        nums1[m+i] = nums2[i]
+    }
+    nums1.sort((x, y) => x-y)
 };
