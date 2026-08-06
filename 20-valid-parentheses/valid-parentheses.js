@@ -4,20 +4,15 @@
  */
 var isValid = function(s) {
     const PAIRS = {
-        "{":"}",
-        "[":"]",
-        "(":")"
+        '{': '}',
+        '[': ']',
+        '(': ')'
     }
-    const stck = []
+    const stack = []
     for(let i=0;i<s.length;i++) {
-        console.log(s[i], s.length)
-        if(PAIRS.hasOwnProperty(s[i])) {
-            stck.push(PAIRS[s[i]])
-        } else{
-            if(stck[stck.length-1] === s[i]){
-                stck.pop()
-            } else return false
-        }
+        if(PAIRS.hasOwnProperty(s[i])) stack.push(PAIRS[s[i]])
+        else if(stack[stack.length-1] === s[i]) stack.pop()
+        else return false
     }
-    return stck.length === 0
+    return stack.length === 0
 };
