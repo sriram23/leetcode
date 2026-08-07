@@ -6,7 +6,7 @@
 const getNumber = (n) => {
     let res = 0
     while(n>0) {
-        res += (n%10)**2
+        res += (n%10)*(n%10)
         n = Math.floor(n/10)
     }
     return res
