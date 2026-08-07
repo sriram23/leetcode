@@ -13,10 +13,10 @@ const getNumber = (n) => {
 }
 var isHappy = function(n) {
     const temp = new Set()
-    while(true) {
-        if(n === 1) return true
-        else if(temp.has(n)) return false
+    while(n !== 1) {
+        if(temp.has(n)) return false
         temp.add(n)
         n = getNumber(n)
     }
+    return true
 };
