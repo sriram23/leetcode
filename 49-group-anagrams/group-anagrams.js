@@ -13,8 +13,5 @@ var groupAnagrams = function(strs) {
             map.set(sig, [str])
         }
     }
-    for(let [key, value] of map.entries()) {
-        finalArr.push(value)
-    }
-    return finalArr
+    return [...map.values()]
 };
