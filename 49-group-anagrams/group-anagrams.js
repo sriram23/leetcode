@@ -4,7 +4,6 @@
  */
 var groupAnagrams = function(strs) {
     const map = new Map()
-    const finalArr = []
     for(let str of strs) {
         const sig = str.split("").sort().join("")
         if(map.has(sig)){
