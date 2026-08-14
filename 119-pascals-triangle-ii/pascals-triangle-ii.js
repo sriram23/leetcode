@@ -3,15 +3,16 @@
  * @return {number[]}
  */
 var getRow = function(rowIndex) {
-    const result = [[1]];
-    for(let i=0; i<rowIndex; i++) {
-        const prevRow = result[result.length-1];
-        const newRow = [1]
-        for(let j=0; j<prevRow.length-1; j++) {
-            newRow.push(prevRow[j]+prevRow[j+1])
+    if(rowIndex === 0) return [1]
+    let pascalTriangle = [[1]]
+    for(let i=1;i<rowIndex+1;i++) {
+        const prevRow = pascalTriangle[i-1]
+        const currRow = [1]
+        for(let j=0;j<prevRow.length-1;j++) {
+            currRow.push(prevRow[j] + prevRow[j+1])
         }
-        newRow.push(1)
-        result.push(newRow)
+        currRow.push(1)
+        pascalTriangle.push(currRow)
     }
-    return result[result.length-1]
+    return pascalTriangle[rowIndex]
 };
